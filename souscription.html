@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Souscription</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .btn-retour {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #00cfff;       /* ✅ bleu ciel */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 207, 255, 0.3);
+  position: fixed;           /* ✅ reste visible */
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.btn-retour:hover {
+  background: #00a3cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 163, 204, 0.4);
+}
+
+.btn-retour:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 163, 204, 0.3);
+}
+
+/* ✅ Responsive mobile */
+@media (max-width: 480px) {
+  .btn-retour {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .modal {
+      display: block; /* ✅ page dédiée, donc toujours visible */
+      width: 100%;
+      height: 100%;
+      background: #f0f2f5;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 95%;
+      max-width: 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00aaff;
+    }
+
+    .product-summary img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .quantity-control {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .quantity-control button {
+      background: #00aaff;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    #subscriptionForm {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      background: #f9f9f9;
+    }
+
+    .form-group i {
+      color: #00aaff;
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    #subscriptionForm input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 1rem;
+      background: transparent;
+    }
+
+    .btn-primary {
+      margin-top: 15px;
+      width: 100%;
+      font-size: 1rem;
+      padding: 14px;
+      background: #00aaff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #0088cc;
+    }
+
+    /* ✅ Responsive mobile */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 95%;
+        margin: 3% auto;
+        padding: 15px;
+        max-height: 95vh;
+        overflow-y: auto;
+      }
+
+      .btn-primary {
+        width: auto;             /* ✅ bouton large */
+        font-size: 1.1rem;
+        padding: 16px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .modal-content {
+        width: 100%;
+        margin: 2% auto;
+        padding: 12px;
+        max-height: 100vh;       /* ✅ occupe toute la fenêtre */
+        overflow-y: auto;
+      }
+
+      .btn-primary {
+        width: auto;
+        font-size: 1.2rem;
+        padding: 18px;
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <a href="produict.html" class="btn-retour">
+      <i class="fas fa-arrow-left"></i> Retour
+    </a>
+
+  <!-- ✅ Modal de souscription -->
+  <div class="modal" id="subscriptionModal">
+    <div class="modal-content">
+      <h2>Souscription</h2>
+      <div class="product-summary">
+        <img id="modal-img" src="" alt="Produit" />
+        <h3 id="modal-name"></h3>
+        <p id="modal-price"></p>
+        <p id="modal-plan"></p>
+        <div class="quantity-control">
+          <button id="minus">➖</button>
+          <span id="quantity">1</span>
+          <button id="plus">➕</button>
+          <button id="remove">🗑️</button>
+        </div>
+      </div>
+
+      <form id="subscriptionForm">
+        <div class="form-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="prenom" placeholder="Prénom complet" required />
+        </div>
+        <div class="form-group">
+          <i class="fas fa-user-tag"></i>
+          <input type="text" id="nom" placeholder="Nom complet" required />
+        </div>
+        <div class="form-group">
+          <i class="fas fa-phone"></i>
+          <input type="tel" id="telephone" placeholder="Téléphone" required />
+        </div>
+        <div class="form-group">
+          <i class="fas fa-city"></i>
+          <input type="text" id="ville" placeholder="Ville" required />
+        </div>
+        <div class="form-group">
+          <i class="fas fa-home"></i>
+          <input type="text" id="quartier" placeholder="Quartier" required />
+        </div>
+
+        <!-- ✅ Bouton en bas -->
+        <button type="submit" class="btn-primary">Confirmer la souscription</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let qty = 1;
+      let basePrice = 0;
+      let basePlan = "";
+
+      // Récupérer les infos du produit via URL (query params)
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("name");
+      const price = params.get("price");
+      const plan = params.get("plan");
+      const img = params.get("img");
+
+      if(name && price && plan && img){
+        document.getElementById('modal-name').textContent = name;
+        document.getElementById('modal-price').textContent = "Prix total : " + price;
+        document.getElementById('modal-plan').textContent = plan;
+        document.getElementById('modal-img').src = img;
+        basePrice = parseInt(price);
+        basePlan = plan;
+      }
+
+      function updatePrices() {
+        document.getElementById('quantity').textContent = qty;
+        document.getElementById('modal-price').textContent = "Prix total : " + (basePrice * qty) + " FCFA";
+        document.getElementById('modal-plan').textContent = basePlan + " × " + qty;
+      }
+
+      document.getElementById('plus').addEventListener('click', () => {
+        qty++;
+        updatePrices();
+      });
+      document.getElementById('minus').addEventListener('click', () => {
+        if(qty > 1) qty--;
+        updatePrices();
+      });
+      document.getElementById('remove').addEventListener('click', () => {
+        qty = 0;
+        updatePrices();
+      });
+
+      // Envoi WhatsApp
+      document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const prenom = document.getElementById('prenom').value;
+        const nom = document.getElementById('nom').value;
+        const tel = document.getElementById('telephone').value;
+        const ville = document.getElementById('ville').value;
+        const quartier = document.getElementById('quartier').value;
+
+        const message = `Souscription produit:\n📱 ${name}\n💰 Prix total: ${basePrice * qty} FCFA\n📅 ${basePlan} × ${qty}\nQuantité: ${qty}\n👤 Client: ${prenom} ${nom}\n📞 Tel: ${tel}\n🏙️ Ville: ${ville}, Quartier: ${quartier}`;
+        const url = `https://wa.me/22898139697?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
