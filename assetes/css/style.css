@@ -55,9 +55,9 @@ body {
 
 /* Logo */
 .logo img {
-  height: 55px;
+  max-width: 300px;
+  height: auto;
   border-radius: 8px; /* arrondi pour un look moderne */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   transition: transform 0.3s ease;
 }
 
@@ -102,6 +102,11 @@ body {
 .btn-secondary:hover,
 .product-card button:hover {
   transform: translateY(-3px);
+}
+@media (max-width: 600px) {
+  .header .logo img {
+    max-width: 180px;   /* réduit la taille sur mobile */
+  }
 }
 
 /* ✅ Adaptation mobile */
@@ -564,6 +569,7 @@ body { font-family: Arial, sans-serif; color: var(--dark); background: var(--whi
 .pro-footer {
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: #fff;
+  border-radius: 2%;
   margin-top: 4rem;
   padding-top: 4rem;
 }
@@ -586,8 +592,8 @@ body { font-family: Arial, sans-serif; color: var(--dark); background: var(--whi
 }
 
 .footer-logo img {
-  width: 48px;
-  height: 48px;
+  width: 100px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
