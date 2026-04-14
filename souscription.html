@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    .btn-retour {
+  *{box-sizing: border-box;
+  }
+  .btn-retour {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -51,14 +53,15 @@
       background: #f0f2f5;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
 
     .modal {
       display: block; /* ✅ page dédiée, donc toujours visible */
-      width: 100%;
+      width: auto;
       height: 100%;
       background: #f0f2f5;
-      padding: 20px;
+      padding: auto;
     }
 
     .modal-content {
@@ -184,7 +187,7 @@
 </head>
 <body>
 
-    <a href="produict.html" class="btn-retour">
+    <a href="produitc.html" class="btn-retour">
       <i class="fas fa-arrow-left"></i> Retour
     </a>
 

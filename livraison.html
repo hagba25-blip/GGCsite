@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livraison & Paiement</title>
+  <link rel="stylesheet" href="assetes/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fcff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #e0f7ff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #0077b6;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #0077b6;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+    
+    /* ✅ Adaptation mobile */
+    @media (max-width: 768px) {
+      header {
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 1rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr; /* une seule colonne sur mobile */
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1rem;
+      }
+
+      .card img {
+        width: 50px;
+        height: 50px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nos Moyens de Livraison & Paiement</h1>
+    <p>Découvrez nos solutions rapides et sécurisées</p>
+    <!-- Fil d’Ariane -->
+    <nav class="breadcrumb">
+       <a href="index.html">Home</a> &gt; <span>Livraison</span>
+    </nav>
+  </header>
+
+  <!-- Moyens de Livraison -->
+  <section>
+    <h2>Moyens de Livraison</h2>
+    <div class="grid" id="livraison">
+      <div class="card">
+        <img src="assetes/images/trici.jpg" alt="Tricycle">
+        <h3>Tricycle</h3>
+        <p>Idéal pour les livraisons de proximité et les petites charges.</p>
+      </div>
+      <div class="card">
+        <img src="assetes/images/moto.png" alt="Moto">
+        <h3>Moto</h3>
+        <p>Rapide et efficace pour les livraisons urgentes en ville.</p>
+      </div>
+      <div class="card">
+        <img src="assetes/images/voitu.png" alt="Voiture">
+        <h3>Voiture</h3>
+        <p>Parfait pour les livraisons volumineuses et sécurisées.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Moyens de Paiement -->
+  <section>
+    <h2>Moyens de Paiement</h2>
+    <div class="grid" id="paiement">
+      <div class="card">
+        <img src="assetes/images/voitu.png" alt="Expresse">
+        <h3>Expresse</h3>
+        <p>Paiement rapide et simple via nos partenaires locaux.</p>
+      </div>
+      <div class="card">
+        <img src="assetes/images/yas.png" alt="Miss By Yas">
+        <h3>Miss By Yas</h3>
+        <p>Solution pratique et sécurisée pour vos transactions au <strong>togo</strong>.</p>
+      </div>
+      <div class="card">
+        <img src="assetes/images/flooz.png" alt="Flooz">
+        <h3>Flooz</h3>
+        <p>Paiement mobile accessible partout et à tout moment.</p>
+      </div>
+      <div class="card">
+        <img src="assetes/images/banc.png" alt="Virement Bancaire">
+        <h3>Virement Bancaire</h3>
+        <p>Transfert sécurisé directement depuis votre banque.</p>
+      </div>
+    </div>
+  </section>
+
+<footer class="pro-footer">
+  <div class="container footer-grid-pro">
+    <!-- Logo + description -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="assetes/images/logom.jpeg" alt="Logo GGC & Partenaire" />
+        <span>GGC & Partenaire</span>
+      </a>
+      <p>
+        Votre partenaire de confiance pour la vente de produits par tontine.
+        Moderne, sécurisé et accessible à tous.
+      </p>
+    </div>
+
+    <!-- Menus -->
+    <div class="footer-links">
+      <h3>Menus</h3>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="produict.html">Produits</a>
+      <a href="comment_ca_marche.html">Comment ça marche</a>
+      <a href="contact.html">Contact</a>
+      <a href="testimolia.html">Témoignages</a>
+      <a href="fag.html">Faq(questions)</a>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-services">
+      <h3>Services disponible</h3>
+      <a href="produitc.html#telephone">Tontine téléphones</a>
+      <a href="produitc.html#ordinateur">Tontine ordinateurs</a>
+      <a href="produitc.html#electro">Tontine Électroménagers</a>
+      <a href="produitc.html#gaz">Tontine Bouteilles de gaz et accessoires</a>
+      <a href="produitc.html#numerique">Tontine produits numériques</a>
+      <a href="produitc.html#alimentation">Tontine Produits alimentaires</a>
+      <a href="produitc.html#construction">Tontine Matériaux de construction</a>
+      <a href="produitc.html#meubles">Tontine Meubles</a>
+      <a href="livraison.html#paiement">Suivi paiements</a>
+      <a href="livraison.html#livraison">Livraison rapide</a>
+    </div>
+
+    <!-- Réseaux + contact -->
+    <div class="footer-contact">
+      <h3>Contactez-nous</h3>
+      <div class="social-icons">
+        <a href="mailto:contact@ggcpartenaire.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/22898139697" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://t.me/username" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://maps.google.com/?q=Lome,Togo" target="_blank" aria-label="Localisation"><i class="fas fa-location-dot"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom-pro">
+    <p>© 2026 GGC & Partenaire – Tous droits réservés.</p>
+  </div>
+</footer>
+</body>
+</html>

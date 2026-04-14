@@ -47,11 +47,19 @@ if (slides.length) {
   }, 4000);
 }
 
-// FAQ accordéon
-const faqQuestions = document.querySelectorAll('.faq-question');
-faqQuestions.forEach((q) => {
-  q.addEventListener('click', () => {
-    q.parentElement.classList.toggle('active');
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const answer = button.nextElementSibling;
+
+    // Fermer toutes les autres réponses
+    document.querySelectorAll(".faq-answer").forEach(a => {
+      if (a !== answer) {
+        a.classList.remove("active");
+      }
+    });
+
+    // Basculer l’état de la réponse cliquée (ouvre/ferme)
+    answer.classList.toggle("active");
   });
 });
 

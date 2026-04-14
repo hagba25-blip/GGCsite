@@ -37,6 +37,23 @@ body {
 }
 
 /* Logo */
+.header .logo img {
+  height: 60px; /* ajuste la taille si nécessaire */
+  margin-right: 15px; /* espace entre le logo et le texte */
+  vertical-align: middle;
+}
+
+/* Titre GGC & Partenaire */
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00bfff; /* bleu ciel */
+  margin-left: 10px; /* espace supplémentaire si besoin */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Logo */
 .logo img {
   height: 55px;
   border-radius: 8px; /* arrondi pour un look moderne */
@@ -85,6 +102,14 @@ body {
 .btn-secondary:hover,
 .product-card button:hover {
   transform: translateY(-3px);
+}
+
+/* ✅ Adaptation mobile */
+@media (max-width: 768px) {
+  .navbar .logo {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
 }
 
 .hero {
@@ -444,10 +469,80 @@ body { font-family: Arial, sans-serif; color: var(--dark); background: var(--whi
 .testimonial-card img{width:80px;height:80px;border-radius:50%;margin-bottom:1rem}
 .stars{font-size:1.3rem;margin:.5rem 0}
 
-.faq-question{width:100%;padding:1rem;border:none;background:#e0f7ff;text-align:left;border-radius:12px;cursor:pointer}
-.faq-answer{display:none;padding:1rem}
-.faq-item.active .faq-answer{display:block}
+/* Conteneur FAQ */
+.faq.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box; /* évite les débordements */
+}
 
+/* Chaque item FAQ */
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* Bouton question */
+.faq-question {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: none;
+  background: #e0f7ff;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #b3ecff;
+}
+
+/* Réponse cachée par défaut */
+.faq-answer {
+  display: none;
+  padding: 1rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Réponse visible quand active */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Animation d’apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ✅ Adaptation mobile */
+@media (max-width: 600px) {
+  .faq.container {
+    padding: 1rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+}
 .contact-grid,.dashboard-grid,.footer-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem
 }
@@ -751,5 +846,56 @@ body { font-family: Arial, sans-serif; color: var(--dark); background: var(--whi
 
   .counter-box {
     width: 100%;
+  }
+}
+.breadcrumb {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #0077b6;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #333;
+  font-weight: 500;
+}
+
+.breadcrumb {
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  color: #0077b6;
+  text-align: center;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #333;
+  font-weight: 500;
+}
+
+/* ✅ Adaptation mobile */
+@media (max-width: 600px) {
+  .breadcrumb {
+    font-size: 0.85rem;
+    padding: 0.4rem;
   }
 }
