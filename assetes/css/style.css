@@ -273,7 +273,7 @@ body {
     display: block;
   }
 
-  .btn-primary {
+  .navbar > .btn-primary {
     display: none;
   }
 }
